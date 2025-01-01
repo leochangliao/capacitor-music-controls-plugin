@@ -13,4 +13,11 @@ export declare class CapacitorMusicControlsWeb extends WebPlugin implements Capa
         elapsed: number;
         isPlaying: boolean;
     }): void;
+    updateMetaData(args:{
+        track: string;
+        artist: string;
+        album: string;
+        cover: string;
+        duration: number;
+    }): void;
 }
