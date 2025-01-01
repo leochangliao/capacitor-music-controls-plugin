@@ -101,6 +101,42 @@ public class MusicControlsNotification {
 		this.createNotification();
 	}
 
+	public void updateElapsed(boolean isPlaying, long elapsed) {
+
+		Log.i(TAG, "updateElapsed: duration: " + this.infos.duration);
+		Log.i(TAG, "updateElapsed: isPlaying/elapsed: " + isPlaying + "/" + elapsed);
+
+		Log.i(TAG, "updateElapsed: pre:this.infos.isPlaying/elapsed: " + this.infos.isPlaying + "/" + this.infos.elapsed);
+
+		this.infos.isPlaying=isPlaying;
+		this.infos.elapsed = elapsed;
+
+		Log.i(TAG, "updateElapsed: post:this.infos.isPlaying/elapsed: " + this.infos.isPlaying + "/" + this.infos.elapsed);
+
+		this.createBuilder();
+		this.createNotification();
+	}
+
+	public void updateMetaData(String track, String artist, String album, String cover, Long duration) {
+		Log.i(TAG, "updateMetaData: track: " +track);
+		Log.i(TAG, "updateMetaData: artist: " + artist);
+		Log.i(TAG, "updateMetaData: album: " + album);
+		Log.i(TAG, "updateMetaData: cover: " + cover);
+		Log.i(TAG, "updateMetaData: duration: " + duration);
+
+		Log.i(TAG, "updateElapsed: pre:this.infos.track: " + this.infos.track);
+
+		this.infos.track=track;
+		this.infos.artist=artist;
+		this.infos.album=album;
+		this.infos.cover=cover;
+		this.infos.duration=duration;
+
+
+		this.createBuilder();
+		this.createNotification();
+	}
+
 	// Toggle the dismissable status
 	public void updateDismissable(boolean dismissable) {
 		this.infos.dismissable=dismissable;
