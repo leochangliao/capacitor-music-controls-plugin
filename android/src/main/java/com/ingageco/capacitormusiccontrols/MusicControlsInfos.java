@@ -23,7 +23,8 @@ public class MusicControlsInfos{
 	public String nextIcon;
 	public String closeIcon;
 	public String notificationIcon;
-
+	public Long duration;
+	public Long elapsed;
 	public MusicControlsInfos(JSObject args) throws JSONException {
 		final JSObject params = args;
 		
@@ -32,6 +33,8 @@ public class MusicControlsInfos{
 		this.album = params.getString("album");
 		this.ticker = params.getString("ticker");
 		this.cover = params.getString("cover");
+		this.duration = params.getLong("duration");
+		this.elapsed = params.getLong("elapsed");
 		this.isPlaying = params.getBoolean("isPlaying");
 		this.hasPrev = params.getBoolean("hasPrev");
 		this.hasNext = params.getBoolean("hasNext");
