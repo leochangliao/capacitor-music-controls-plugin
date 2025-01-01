@@ -56,7 +56,18 @@ export interface CapacitorMusicControlsPlugin {
         elapsed: number;
         isPlaying: boolean;
     }): void;
-
+    /**
+     * Update metaData:
+     * @param args {Object}
+     */
+    
+    updateMetaData(args:{
+        track: string;
+        artist: string;
+        album: string;
+        cover: string;
+        duration: number;
+    }): void;
     /**
      * Toggle dismissable:
      * @param dismissable {boolean}
